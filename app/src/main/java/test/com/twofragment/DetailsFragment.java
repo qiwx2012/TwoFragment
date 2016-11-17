@@ -18,17 +18,19 @@ public class DetailsFragment extends Fragment {
     private static String mIndex;
     public EditText editText2;
     Button bnt2;
-    Math math;
+    static int randNum;
     static TitleFragment fragment;
 
     //Fragment一定要有构造函数，要setArguments
-    public static DetailsFragment newInstance(TitleFragment obj ) {
+    public static DetailsFragment newInstance(TitleFragment obj) {
         Log.d("FragmentList", "DetailsFragment newInstance");
-        fragment=obj;
+        fragment = obj;
         DetailsFragment details = new DetailsFragment();
         Bundle args = new Bundle();
-        args.putSerializable("obj",obj);
+        args.putSerializable("obj", obj);
         //args.putInt("index", index);
+        randNum = Math.round(10.0f);
+
         details.setArguments(args);
         Log.d("FragmentList", "index :"
                 + details.getArguments().getInt("index"));
@@ -53,11 +55,11 @@ public class DetailsFragment extends Fragment {
         setListenter((FragmentMessage) getActivity());
         View view = inflater.inflate(R.layout.title_fragment, null);
         editText2 = (EditText) view.findViewById(R.id.edt_1);
-         bnt2 = (Button) view.findViewById(R.id.bnt_1);
+        bnt2 = (Button) view.findViewById(R.id.bnt_1);
         bnt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(fragment!=null){
+                if (fragment != null) {
                     fragment.edt1.setText(editText2.getText().toString());
                 }
 
