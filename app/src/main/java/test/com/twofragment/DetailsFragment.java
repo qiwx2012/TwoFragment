@@ -30,6 +30,7 @@ public class DetailsFragment extends Fragment {
         args.putSerializable("obj", obj);
         //args.putInt("index", index);
         randNum = Math.round(10.0f);
+        randNum = Math.round(10.0f);
 
         details.setArguments(args);
         Log.d("FragmentList", "index :"
