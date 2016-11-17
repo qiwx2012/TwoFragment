@@ -18,6 +18,7 @@ public class DetailsFragment extends Fragment {
     private static String mIndex;
     public EditText editText2;
     Button bnt2;
+    Math math;
     static TitleFragment fragment;
 
     //Fragment一定要有构造函数，要setArguments
